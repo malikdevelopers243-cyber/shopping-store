@@ -156,11 +156,11 @@
   .payment-method-card p {
     font-size: 12px;
     margin-bottom: 14px;
+  }
 
   /* Hide the Select button on small screens (mobile) to simplify the UI */
   .payment-method-card .method-btn {
     display: none;
-  }
   }
 
   .method-btn {

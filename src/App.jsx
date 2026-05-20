@@ -46,6 +46,17 @@ function AppContent() {
     <Router>
       <ScrollToTop />
       {user && <Navbar />}
+      <AppRoutes user={user} />
+    </Router>
+  );
+}
+
+function AppRoutes({ user }) {
+  const location = useLocation();
+  const hideFooter = ['/payment', '/payment-success'].includes(location.pathname);
+
+  return (
+    <>
       <Routes>
         <Route
           path="/login"
@@ -98,14 +109,15 @@ function AppContent() {
         />
 
         <Route
-  path="/products"
-  element={
-    <ProtectedRoute>
-      <Products />
-    </ProtectedRoute>
-  }
-/>
-<Route
+          path="/products"
+          element={
+            <ProtectedRoute>
+              <Products />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
           path="/payment"
           element={
             <ProtectedRoute>
@@ -122,13 +134,12 @@ function AppContent() {
           }
         />
 
-
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
 
-      {user && <Footer />}
-    </Router>
+      {user && !hideFooter && <Footer />}
+    </>
   );
 }
 
