@@ -18,8 +18,6 @@ import PaymentMethod from './pages/PaymentMethod';
 import PaymentSuccess from './pages/PaymentSuccess';
 import { ToastProvider } from './context/ToastContext';
 import Products from './pages/Products';
-
-
 import './App.css';
 
 function AppContent() {
