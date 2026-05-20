@@ -10,6 +10,7 @@ const Navbar = () => {
   const { getTotalItems } = useCart();
   const { searchTerm, setSearchTerm } = useSearch();
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
 
   const handleLogout = () => {
     logout();
