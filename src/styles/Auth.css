@@ -314,15 +314,30 @@
 
 @media (max-width: 480px) {
   .auth-container {
-    padding: 30px 15px;
+    padding: 20px 12px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  /* Constrain the auth content to a centered card on small screens */
+  .auth-content {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 0 8px;
   }
 
   .auth-card {
-    padding: 35px 25px;
+    padding: 24px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.92);
+    border: 2px solid rgba(0,200,255,0.12);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6);
   }
 
   .auth-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .btn-login {
