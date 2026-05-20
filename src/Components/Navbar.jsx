@@ -10,17 +10,13 @@ const Navbar = () => {
   const { getTotalItems } = useCart();
   const { searchTerm, setSearchTerm } = useSearch();
   const navigate = useNavigate();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
-    setMobileMenuOpen(false);
     window.location.href = '/login';
   };
     const handleNavClick = (path) => {
     navigate(path);
-    setMobileMenuOpen(false);
   };
 
   const handleSearchChange = (e) => {
@@ -38,7 +34,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/home" className="navbar-logo" onClick={() => setMobileMenuOpen(false)}>
+        <Link to="/home" className="navbar-logo">
           <img 
         src="/images/Profile photo.png" 
         alt="Logo" 
@@ -48,21 +44,21 @@ const Navbar = () => {
         </Link>
 
         <div className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`}>
-          <Link to="/home" className="nav-link" onClick={() => setMobileMenuOpen(false)} onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/home" className="nav-link"  onClick={() => window.scrollTo(0, 0)}>
           
             Home
           </Link>
-          <Link to="/products" className="nav-link"  onClick={() => setMobileMenuOpen(false)} onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/products" className="nav-link" onClick={() => window.scrollTo(0, 0)}>
             Products
           </Link>
-          <Link to="/deals" className="nav-link"  onClick={() => setMobileMenuOpen(false)}  onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/deals" className="nav-link"  onClick={() => window.scrollTo(0, 0)}>
             Deals
           </Link>
           <NavLink
             to="/contact"
             className={({ isActive }) =>
               isActive ? 'nav-link nav-link-active' : 'nav-link'
-            } onClick={() => window.scrollTo(0, 0)}  onClick={() => setMobileMenuOpen(false)}
+            } onClick={() => window.scrollTo(0, 0)}
           >
             Contact
           </NavLink>
