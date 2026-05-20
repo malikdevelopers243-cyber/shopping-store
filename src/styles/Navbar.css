@@ -271,12 +271,13 @@ body {
   background: none;
   border: none;
   color: white;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   padding: 0;
   position: relative;
   z-index: 1100;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
@@ -286,25 +287,29 @@ body {
   width: 22px;
   height: 2px;
   background: white;
-  border-radius: 999px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  position: relative;
+  border-radius: 2px;
+  transition: transform 0.25s cubic-bezier(.2,.9,.2,1), opacity 0.2s ease;
+  transform-origin: center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .mobile-toggle span + span {
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
+/* Open state: form a clean X without gaps */
 .mobile-toggle.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
 
 .mobile-toggle.open span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .mobile-toggle.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .mobile-drawer {
