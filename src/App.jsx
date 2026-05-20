@@ -4,9 +4,8 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { SearchProvider } from './context/SearchContext';
 import ProtectedRoute from './components/ProtectedRoute';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
