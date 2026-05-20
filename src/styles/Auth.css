@@ -314,39 +314,44 @@
 
 @media (max-width: 480px) {
   .auth-container {
-    padding: 20px 12px;
+    padding: 12px 10px;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
   }
 
-  /* Constrain the auth content to a centered card on small screens */
+  /* Constrain the auth content to a compact, centered card on small screens */
   .auth-content {
     width: 100%;
-    max-width: 380px;
+    max-width: 360px;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 0 6px;
   }
 
   .auth-card {
-    padding: 24px;
-    border-radius: 16px;
-    background: rgba(15, 23, 42, 0.92);
-    border: 2px solid rgba(0,200,255,0.12);
-    box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(0,200,255,0.08);
+    box-shadow: 0 12px 30px rgba(2,6,23,0.6);
     width: 100%;
-    max-width: 380px;
-    margin: 12px auto;
-    max-height: 88vh;
-    overflow: auto;
+    max-width: 360px;
+    margin: 8px auto;
+    /* remove inner scroll by keeping card content compact */
+    max-height: none;
+    overflow: visible;
   }
 
   .auth-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .btn-login {
     padding: 12px;
     font-size: 14px;
   }
+
+  /* slightly smaller inputs and spacing to avoid overflow */
+  .form-input { padding: 10px 12px 10px 36px; }
+  .auth-form { gap: 12px; }
 }
