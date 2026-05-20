@@ -488,4 +488,34 @@
   .summary-card {
     padding: 20px;
   }
+
+  .payment-method-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .method-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+  }
+
+  .payment-method-card h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .payment-method-card p {
+    display: none;
+  }
+
+  .method-btn {
+    padding: 10px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
 }
