@@ -6,9 +6,6 @@ import ProductCard from '../components/ProductCard';
 import '../styles/Home.css';
 
 const Home = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const { user } = useAuth();
   const navigate = useNavigate();
 

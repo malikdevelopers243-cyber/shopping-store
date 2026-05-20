@@ -13,9 +13,6 @@ const INQUIRY_TYPES = [
 ];
 
 const Contact = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const { user } = useAuth();
   const [form, setForm] = useState({
     name: user?.name || '',

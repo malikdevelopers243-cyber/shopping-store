@@ -10,10 +10,6 @@ const Products = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   // Categories extract karo
   const categories = ['All', ...new Set(FEATURED_PRODUCTS.map(p => p.category))];
 

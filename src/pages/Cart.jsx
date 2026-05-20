@@ -4,9 +4,6 @@ import { useCart } from '../context/CartContext';
 import '../styles/Cart.css';
 
 const Cart = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const { cartItems, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const navigate = useNavigate();
 

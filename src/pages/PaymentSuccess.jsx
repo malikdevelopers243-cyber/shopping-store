@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/PaymentSuccess.css';
 
 const PaymentSuccess = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const navigate = useNavigate();
 
   useEffect(() => {

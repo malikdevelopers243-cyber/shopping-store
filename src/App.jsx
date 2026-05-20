@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect, useLayoutEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { SearchProvider } from './context/SearchContext';
@@ -19,6 +19,22 @@ import { ToastProvider } from './context/ToastContext';
 import Products from './pages/Products';
 import './App.css';
 
+function ScrollToTop() {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname, location.search]);
+
+  return null;
+}
+
 function AppContent() {
   const { user, checkUserOnMount } = useAuth();
 
@@ -28,6 +44,7 @@ function AppContent() {
 
   return (
     <Router>
+      <ScrollToTop />
       {user && <Navbar />}
       <Routes>
         <Route

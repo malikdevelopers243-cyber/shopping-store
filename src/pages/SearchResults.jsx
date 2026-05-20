@@ -8,9 +8,6 @@ import ProductCard from '../components/ProductCard';
 import '../styles/SearchResults.css';
 
 const SearchResults = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { setSearchTerm } = useSearch();
@@ -25,10 +22,6 @@ const SearchResults = () => {
       navigate('/home', { replace: true });
     }
   }, [query, navigate]);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [query]);
 
   const results = useMemo(() => {
     const normalized = query.toLowerCase();

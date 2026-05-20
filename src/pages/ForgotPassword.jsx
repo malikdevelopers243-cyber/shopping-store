@@ -14,9 +14,6 @@ const ForgotPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   
   const { forgetPassword, verifyResetCode, resetPassword, isLoading } = useAuth();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const navigate = useNavigate();
   const handleSendCode = async (e) => {
     e.preventDefault();

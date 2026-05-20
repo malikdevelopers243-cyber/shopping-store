@@ -4,9 +4,6 @@ import { useCart } from '../context/CartContext';
 import '../styles/Payment.css';
 
 const PaymentMethod = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const navigate = useNavigate();
   const { getTotalPrice, clearCart } = useCart();
   const [selectedMethod, setSelectedMethod] = useState(null);
