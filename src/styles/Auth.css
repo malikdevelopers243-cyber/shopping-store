@@ -236,11 +236,20 @@
   display: inline-block;
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(0, 200, 255, 0.3);
-  border-top-color: #00c8ff;
+  border: 2px solid rgba(255, 77, 79, 0.25);
+  border-top-color: #ff4d4f;
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
   margin-right: 8px;
+}
+
+/* Scoped spinner for auth forms to prevent overrides from other pages */
+.auth-card .spinner {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+  border: 2px solid rgba(255, 77, 79, 0.25);
+  border-top-color: #ff4d4f;
 }
 
 @keyframes spin {

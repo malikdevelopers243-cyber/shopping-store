@@ -175,10 +175,39 @@ body {
   text-decoration: none;
 }
 
+/* Give the cart icon a pleasant rounded background with subtle glow */
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+  box-shadow: 0 4px 14px rgba(18, 31, 82, 0.06);
+}
+
+.cart-icon:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(18, 31, 82, 0.10);
+}
+
 .cart-image {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  display: block;
+}
+
+/* Active state (when on /cart) - stronger background and subtle ring */
+.cart-icon-active {
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 8px 26px rgba(102, 126, 234, 0.12);
 }
 
 .cart-badge {

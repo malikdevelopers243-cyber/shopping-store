@@ -118,6 +118,26 @@
   animation: searchCardEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Attractive, subtle gradient border around product cards in search results */
+.search-results-card-wrap {
+  border-radius: 14px;
+  padding: 4px; /* shows the gradient border around the inner card */
+  background: linear-gradient(135deg, rgba(102,126,234,0.10), rgba(118,75,162,0.08));
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+}
+
+.search-results-card-wrap:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(102,126,234,0.12);
+  background: linear-gradient(135deg, rgba(102,126,234,0.16), rgba(118,75,162,0.12));
+}
+
+/* Ensure inner card keeps its radius so the border shows cleanly */
+.search-results-card-wrap .product-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 @keyframes searchCardEnter {
   from {
     opacity: 0;
