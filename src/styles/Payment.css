@@ -66,31 +66,92 @@
   color: white;
 }
 
-.payment-method-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #2d3748;
+@media (max-width: 768px) {
+  .payment-container {
+    padding: 24px 16px;
+  }
+
+  .payment-wrapper {
+    max-width: 100%;
+  }
+
+  .payment-methods-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .payment-method-card {
+    padding: 22px 16px;
+  }
+
+  .method-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+
+  .payment-method-card h3 {
+    font-size: 18px;
+  }
+
+  .payment-method-card p {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
 }
 
-.payment-method-card p {
-  font-size: 13px;
-  color: #718096;
-  margin-bottom: 20px;
-}
+@media (max-width: 480px) {
+  .payment-container {
+    padding: 20px 12px;
+  }
 
-.method-btn {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+  .payment-header h1 {
+    font-size: 28px;
+  }
 
-.method-btn:hover {
+  .payment-header p {
+    font-size: 14px;
+  }
+
+  .payment-method-card {
+    border-width: 2px;
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .method-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 14px;
+  }
+
+  .payment-method-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .payment-method-card p {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .method-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .order-summary {
+    padding: 24px;
+  }
+
+  .summary-item {
+    font-size: 16px;
+  }
+
+  .amount {
+    font-size: 22px;
+  }
+}
   opacity: 0.9;
   transform: scale(1.02);
 }
