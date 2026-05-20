@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body, html, #root {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
