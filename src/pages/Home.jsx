@@ -43,20 +43,44 @@ const Home = () => {
       <section className="categories-section">
         <h2>Shop by Category</h2>
         <div className="categories-grid">
-          <div className="category-card">
-             <img src="/images/Electronics.png" alt="Home" className="Electronics" />
+          <div
+            className="category-card"
+            onClick={() => navigate('/products', { state: { category: 'Electronics' } })}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Electronics' } })}
+          >
+             <img src="/images/Electronics.png" alt="Electronics" className="Electronics" />
             <h3>Electronics</h3>
           </div>
-          <div className="category-card">
-             <img src="/images/Fashion.png" alt="Home" className="Fashion" />
+          <div
+            className="category-card"
+            onClick={() => navigate('/products', { state: { category: 'Fashion' } })}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Fashion' } })}
+          >
+             <img src="/images/Fashion.png" alt="Fashion" className="Fashion" />
             <h3>Fashion</h3>
           </div>
-          <div className="category-card">
-             <img src="/images/Home.png" alt="Home" className="Home" />
+          <div
+            className="category-card"
+            onClick={() => navigate('/products', { state: { category: 'Home & Living' } })}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Home & Living' } })}
+          >
+             <img src="/images/Home.png" alt="Home & Living" className="Home" />
             <h3>Home & Living</h3>
           </div>
-          <div className="category-card">
-            <img src="/images/Gaming.png" alt="Home" className="Gaming" />
+          <div
+            className="category-card"
+            onClick={() => navigate('/products', { state: { category: 'Gaming' } })}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Gaming' } })}
+          >
+            <img src="/images/Gaming.png" alt="Gaming" className="Gaming" />
             <h3>Gaming</h3>
           </div>
         </div>
