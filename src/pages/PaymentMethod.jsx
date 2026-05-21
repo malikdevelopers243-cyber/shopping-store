@@ -39,6 +39,13 @@ const PaymentMethod = () => {
       description: 'Secure Digital Payment'
     },
     {
+      id: 'cod',
+      name: 'Cash on Delivery',
+      icon: '/images/cash on delivery.png',
+      color: '#2563EB',
+      description: 'Pay only when your order is delivered'
+    },
+    {
       id: 'bank',
       name: 'Bank Transfer',
       icon: '/images/bank.png',
@@ -193,7 +200,7 @@ const PaymentDetailsForm = ({ method, paymentMethods, banks, totalPrice, onBack,
     if (method === 'bank' && !formData.accountNumber.trim()) {
       newErrors.accountNumber = 'Account number is required';
     }
-    if (method !== 'bank' && !formData.accountNumber.trim()) {
+    if (method !== 'bank' && method !== 'cod' && !formData.accountNumber.trim()) {
       newErrors.accountNumber = `${selectedPayment.name} account is required`;
     }
 
@@ -355,6 +362,13 @@ const PaymentDetailsForm = ({ method, paymentMethods, banks, totalPrice, onBack,
                     {errors.accountNumber && <span className="error-text">{errors.accountNumber}</span>}
                   </div>
                 </>
+              ) : method === 'cod' ? (
+                <div className="form-group">
+                  <label>Cash on Delivery</label>
+                  <p className="cod-description">
+                    Your order will be delivered and you can pay the amount in cash directly to the delivery agent.
+                  </p>
+                </div>
               ) : (
                 <div className="form-group">
                   <label>{selectedPayment.name} Account *</label>

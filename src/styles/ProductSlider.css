@@ -1,0 +1,248 @@
+.product-slider {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  margin-top: -8px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.slider-label {
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #667eea;
+  margin: 0 0 4px;
+}
+
+.slider-header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.slider-timer {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.slider-track {
+  position: relative;
+  min-height: 320px;
+}
+
+.slider-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 10px 0;
+  pointer-events: none;
+}
+
+.slider-item.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.slider-discount-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(239, 68, 68, 0.18);
+}
+
+.slider-image-wrap {
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.slider-image-wrap img {
+  max-width: 260px;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.slider-info {
+  width: 100%;
+  text-align: center;
+}
+
+.slider-product-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 14px;
+  line-height: 1.35;
+}
+
+.slider-prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.slider-original-price {
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.slider-current-price {
+  color: #dc2626;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.slider-buy-btn {
+  width: 100%;
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.slider-buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(220, 38, 38, 0.25);
+  background: #b91c1c;
+}
+
+.slider-buy-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.slider-buy-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #111827;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.slider-arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: rgba(15, 23, 42, 0.14);
+}
+
+.slider-arrow-left {
+  left: 16px;
+}
+
+.slider-arrow-right {
+  right: 16px;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.slider-dot.active {
+  background: #667eea;
+  transform: scale(1.2);
+}
+
+@media (max-width: 1080px) {
+  .product-slider {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 860px) {
+  .product-slider {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 22px;
+  }
+
+  .slider-track {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .slider-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .slider-image-wrap {
+    min-height: 190px;
+  }
+
+  .slider-info {
+    padding: 0 8px;
+  }
+}

@@ -1,8 +1,9 @@
-﻿import React, { useEffect } from 'react';
+﻿import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { FEATURED_PRODUCTS } from '../data/products';
 import ProductCard from '../components/ProductCard';
+import ProductSlider from '../components/ProductSlider';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -19,20 +20,25 @@ const Home = () => {
       }}>
         <div className="hero-overlay">
           <div className="hero-content">
-            <div className="hero-text">
-              <h1>Welcome, {user?.name.split(' ')[0]}..!</h1>
-              <p>Discover amazing products at unbeatable prices</p>
-              <div className="hero-buttons">
-                <button
-                  onClick={() => navigate('/products')}
-                  className="btn-primary"
-                >
-                 Start Shopping
-              </button>
-              <button className="btn-secondary">
-                 View Deals
-              </button>
+            <div className="hero-left">
+              <div className="hero-text">
+                <h1>Welcome, {user?.name?.split(' ')[0] ?? 'Guest'}..!</h1>
+                <p>Discover amazing products at unbeatable prices</p>
+                <div className="hero-buttons">
+                  <button
+                    onClick={() => navigate('/products')}
+                    className="btn-primary"
+                  >
+                   Start Shopping
+                </button>
+                <button className="btn-secondary">
+                   View Deals
+                </button>
+                </div>
               </div>
+            </div>
+            <div className="hero-right">
+              <ProductSlider />
             </div>
           </div>
         </div>
