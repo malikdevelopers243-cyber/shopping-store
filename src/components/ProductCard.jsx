@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
       <Link to={`/product/${product.id}`} className="product-image-link">
         <div className="product-image-container">
           <img
-            src={product.image}
+            src={encodeURI(product.image)}
             alt={product.name}
             className="product-image"
           />

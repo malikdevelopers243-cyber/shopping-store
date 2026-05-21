@@ -98,7 +98,7 @@ const ProductSlider = () => {
             ) : null}
 
             <div className="slider-image-wrap">
-              <img src={product.image} alt={product.name} />
+              <img src={encodeURI(product.image)} alt={product.name} />
             </div>
 
             <div className="slider-info">

@@ -148,7 +148,7 @@ const ProductDetail = () => {
       <div className="detail-grid">
         <div className="detail-image-panel">
           <div className="detail-main-image">
-            <img src={selectedImage} alt={product.name} />
+            <img src={encodeURI(selectedImage)} alt={product.name} />
           </div>
           <div className="detail-thumbnails">
             {product.images.map((image, index) => (
@@ -158,7 +158,7 @@ const ProductDetail = () => {
                 className={`thumbnail-button ${selectedImage === image ? 'active' : ''}`}
                 onClick={() => setSelectedImage(image)}
               >
-                <img src={image} alt={`${product.name} ${index + 1}`} />
+                <img src={encodeURI(image)} alt={`${product.name} ${index + 1}`} />
               </button>
             ))}
           </div>

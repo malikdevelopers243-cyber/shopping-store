@@ -32,7 +32,7 @@ const QuickViewModal = ({ product, onClose, onAddToCart, onBuyNow, onShowReviews
         </button>
         <div className="quickview-body">
           <div className="quickview-image-panel">
-            <img src={product.image} alt={product.name} className="quickview-image" />
+            <img src={encodeURI(product.image)} alt={product.name} className="quickview-image" />
           </div>
           <div className="quickview-details">
             <h2>{product.name}</h2>
