@@ -14,7 +14,7 @@ const Home = () => {
 
        <div className="home-container">
       <section className="hero-section" style={{
-        backgroundImage: `url('/images/login photo.png')`,
+        backgroundImage: `url(${encodeURI('/images/login photo.png')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
@@ -53,7 +53,7 @@ const Home = () => {
             tabIndex={0}
             onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Electronics' } })}
           >
-             <img src="/images/Electronics.png" alt="Electronics" className="Electronics" />
+             <img src={encodeURI('/images/Electronics.png')} alt="Electronics" className="Electronics" />
             <h3>Electronics</h3>
           </div>
           <div
@@ -63,7 +63,7 @@ const Home = () => {
             tabIndex={0}
             onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Fashion' } })}
           >
-             <img src="/images/Fashion.png" alt="Fashion" className="Fashion" />
+             <img src={encodeURI('/images/Fashion.png')} alt="Fashion" className="Fashion" />
             <h3>Fashion</h3>
           </div>
           <div
@@ -73,7 +73,7 @@ const Home = () => {
             tabIndex={0}
             onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Home & Living' } })}
           >
-             <img src="/images/Home.png" alt="Home & Living" className="Home" />
+             <img src={encodeURI('/images/Home.png')} alt="Home & Living" className="Home" />
             <h3>Home & Living</h3>
           </div>
           <div
@@ -83,7 +83,7 @@ const Home = () => {
             tabIndex={0}
             onKeyDown={(e) => e.key === 'Enter' && navigate('/products', { state: { category: 'Gaming' } })}
           >
-            <img src="/images/Gaming.png" alt="Gaming" className="Gaming" />
+            <img src={encodeURI('/images/Gaming.png')} alt="Gaming" className="Gaming" />
             <h3>Gaming</h3>
           </div>
         </div>
@@ -92,22 +92,22 @@ const Home = () => {
       <section className="benefits-section">
         <div className="benefits-grid">
           <div className="benefit-card">
-             <img src="/images/Fast.png" alt="Home" className="Fast" />
+             <img src={encodeURI('/images/Fast.png')} alt="Home" className="Fast" />
             <h3>Fast Delivery</h3>
             <p>Free shipping on orders above PKR 2000</p>
           </div>
           <div className="benefit-card">
-            <img src="/images/secure payments.png" alt="Home" className="Secure" />
+            <img src={encodeURI('/images/secure payments.png')} alt="Home" className="Secure" />
             <h3>Secure Payment</h3>
             <p>100% secure transactions</p>
           </div>
           <div className="benefit-card">
-            <img src="/images/Easy returns.png" alt="Home" className="Returns" />
+            <img src={encodeURI('/images/Easy returns.png')} alt="Home" className="Returns" />
             <h3>Easy Returns</h3>
             <p>30-day return guarantee</p>
           </div>
           <div className="benefit-card">
-            <img src="/images/best qualty.png" alt="Home" className="Qualty" />
+            <img src={encodeURI('/images/best qualty.png')} alt="Home" className="Qualty" />
             <h3>Best Quality</h3>
             <p>Authentic products only</p>
           </div>

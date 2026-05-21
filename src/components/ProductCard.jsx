@@ -1,24 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { useNavigate } from 'react-router-dom';
 import { useToast } from '../context/ToastContext';
+import QuickViewModal from './QuickViewModal';
 import '../styles/ProductCard.css';
 
 const ProductCard = ({ product }) => {
+  const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
   const { addToCart } = useCart();
   const { showToast } = useToast();
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleAddToCart = (e) => {
-    e.preventDefault();
+    if (e && typeof e.preventDefault === 'function') {
+      e.preventDefault();
+    }
     addToCart(product);
-     showToast(` ${product.name} added to cart!`, 'success');
+    showToast(`${product.name} added to cart!`, 'success');
   };
-   const handleBuyNow = (e) => {
-    e.preventDefault();
+
+  const handleBuyNow = (e) => {
+    if (e && typeof e.preventDefault === 'function') {
+      e.preventDefault();
+    }
     addToCart(product);
     navigate('/payment');
+  };
+
+  const openQuickView = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsQuickViewOpen(true);
   };
 
   return (
@@ -33,9 +45,6 @@ const ProductCard = ({ product }) => {
           {product.discount && (
             <div className="discount-badge">{product.discount}% OFF</div>
           )}
-          <div className="product-overlay">
-            <button className="btn-quick-view">Quick View</button>
-          </div>
         </div>
       </Link>
 
@@ -60,19 +69,30 @@ const ProductCard = ({ product }) => {
           </span>
         </div>
 
-        <button
-          onClick={handleAddToCart}
-          className="btn-add-cart"
-        >
-           Add to Cart
+        <button onClick={openQuickView} className="btn-quick-view card-quick-view">
+          Quick View
         </button>
-         <button
-          onClick={handleBuyNow}
-          className="btn-add-cart"
-        >
-           Buy Now
+
+        <button onClick={handleAddToCart} className="btn-add-cart">
+          Add to Cart
+        </button>
+        <button onClick={handleBuyNow} className="btn-add-cart">
+          Buy Now
         </button>
       </div>
+
+      {isQuickViewOpen && (
+        <QuickViewModal
+          product={product}
+          onClose={() => setIsQuickViewOpen(false)}
+          onAddToCart={handleAddToCart}
+          onBuyNow={handleBuyNow}
+          onShowReviews={() => {
+            navigate(`/product/${product.id}#reviews`);
+            setIsQuickViewOpen(false);
+          }}
+        />
+      )}
     </div>
   );
 };

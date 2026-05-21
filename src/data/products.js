@@ -1,10 +1,35 @@
-﻿export const FEATURED_PRODUCTS = [
-    {
+﻿
+    const reviewSamples = [
+  {
+    id: 1,
+    user: "Ahmed Khan",
+    rating: 5,
+    text: "Excellent product! Highly recommended.",
+    date: "2024-05-15"
+  },
+  {
+    id: 2,
+    user: "Fatima Ali",
+    rating: 4,
+    text: "Good quality, fast delivery.",
+    date: "2024-05-10"
+  },
+  {
+    id: 3,
+    user: "Hassan Malik",
+    rating: 5,
+    text: "Best purchase ever!",
+    date: "2024-05-05"
+  }];
+
+  
+  const rawProducts = [
+  {
       id: 1,
       name: 'Premium Wireless Headphones',
       price: 8999,
       originalPrice: 12999,
-       image: '/images/Headphones.png',
+      image: '/images/Headphones.png',
       category: 'Electronics',
       rating: 4.5,
       reviews: 324,
@@ -766,11 +791,175 @@
     name: 'Camping Tent Outdoor',
     price: 4999,
     // originalPrice: 9999,
-     image: '/images/tent.png',
+    image: '/images/tent.png',
     category: 'Sports & Outdoors',
     rating: 4.6,
     reviews: 267,
     // discount: 50
   }
 ];
+
+const categoryDefaults = {
+  Electronics: {
+    defaultSpecs: {
+      dimensions: '22 x 16 x 8 cm',
+      weight: '480g',
+      material: 'Aluminum & ABS',
+      colorOptions: ['Black', 'Silver', 'White'],
+    },
+    seller: { name: 'TechBay', rating: 4.9, location: 'Karachi, Pakistan' },
+    shipping: { deliveryTime: '2-4 business days', freeShippingThreshold: 3000 },
+    tag: 'Top Tech',
+    sizeOptions: ['One Size'],
+  },
+  Fashion: {
+    defaultSpecs: {
+      dimensions: 'Varies by style',
+      weight: '200g',
+      material: 'Cotton blend',
+      colorOptions: ['Black', 'Navy', 'Grey', 'White'],
+    },
+    seller: { name: 'StyleStreet', rating: 4.8, location: 'Lahore, Pakistan' },
+    shipping: { deliveryTime: '3-5 business days', freeShippingThreshold: 2000 },
+    tag: 'Trending',
+    sizeOptions: ['S', 'M', 'L', 'XL'],
+  },
+  Accessories: {
+    defaultSpecs: {
+      dimensions: '12 x 8 x 3 cm',
+      weight: '120g',
+      material: 'Plastic & Metal',
+      colorOptions: ['Black', 'Grey', 'Blue'],
+    },
+    seller: { name: 'AccessoryHub', rating: 4.7, location: 'Islamabad, Pakistan' },
+    shipping: { deliveryTime: '2-4 business days', freeShippingThreshold: 1500 },
+    tag: 'Best Value',
+    sizeOptions: ['One Size'],
+  },
+  'Home & Living': {
+    defaultSpecs: {
+      dimensions: '30 x 20 x 10 cm',
+      weight: '650g',
+      material: 'Stainless steel & glass',
+      colorOptions: ['White', 'Silver', 'Matte Black'],
+    },
+    seller: { name: 'Home Essentials', rating: 4.6, location: 'Faisalabad, Pakistan' },
+    shipping: { deliveryTime: '3-6 business days', freeShippingThreshold: 2500 },
+    tag: 'Home Pick',
+    sizeOptions: ['Standard'],
+  },
+  Gaming: {
+    defaultSpecs: {
+      dimensions: '28 x 16 x 9 cm',
+      weight: '520g',
+      material: 'ABS plastic & mesh',
+      colorOptions: ['Black', 'RGB'],
+    },
+    seller: { name: 'GameZone', rating: 4.8, location: 'Karachi, Pakistan' },
+    shipping: { deliveryTime: '2-3 business days', freeShippingThreshold: 2500 },
+    tag: 'Gamer Favorite',
+    sizeOptions: ['One Size'],
+  },
+  'Books & Stationery': {
+    defaultSpecs: {
+      dimensions: '23 x 17 x 2 cm',
+      weight: '350g',
+      material: 'Paper & cardboard',
+      colorOptions: ['Blue', 'Green', 'Black'],
+    },
+    seller: { name: 'StudyMart', rating: 4.7, location: 'Multan, Pakistan' },
+    shipping: { deliveryTime: '3-5 business days', freeShippingThreshold: 1500 },
+    tag: 'Study Essentials',
+    sizeOptions: ['One Size'],
+  },
+  'Beauty & Skincare': {
+    defaultSpecs: {
+      dimensions: '10 x 6 x 4 cm',
+      weight: '180g',
+      material: 'Glass & plastic',
+      colorOptions: ['Pink', 'Green', 'White'],
+    },
+    seller: { name: 'GlowCare', rating: 4.9, location: 'Karachi, Pakistan' },
+    shipping: { deliveryTime: '2-4 business days', freeShippingThreshold: 2000 },
+    tag: 'Skin Favorite',
+    sizeOptions: ['50ml', '100ml'],
+  },
+  'Sports & Outdoors': {
+    defaultSpecs: {
+      dimensions: '40 x 20 x 15 cm',
+      weight: '700g',
+      material: 'Polyester & rubber',
+      colorOptions: ['Black', 'Red', 'Blue'],
+    },
+    seller: { name: 'ActiveLife', rating: 4.7, location: 'Peshawar, Pakistan' },
+    shipping: { deliveryTime: '3-6 business days', freeShippingThreshold: 2500 },
+    tag: 'Outdoor Ready',
+    sizeOptions: ['Standard'],
+  },
+  default: {
+    defaultSpecs: {
+      dimensions: '25 x 18 x 8 cm',
+      weight: '500g',
+      material: 'Premium blend',
+      colorOptions: ['Black', 'Grey'],
+    },
+    seller: { name: 'Everyday Store', rating: 4.6, location: 'Pakistan' },
+    shipping: { deliveryTime: '3-5 business days', freeShippingThreshold: 2000 },
+    tag: 'Popular',
+    sizeOptions: ['Standard'],
+  },
+};
+
+const sampleReviews = [
+  {
+    author: 'Ayesha',
+    rating: 5,
+    comment: 'Great quality and fast delivery. Truly exceeded expectations.',
+    date: '2 days ago',
+  },
+  {
+    author: 'Bilal',
+    rating: 4,
+    comment: 'Very good value for money. Comfortable and well-made.',
+    date: '1 week ago',
+  },
+  {
+    author: 'Sara',
+    rating: 4,
+    comment: 'The product arrived well-packed and works exactly as described.',
+    date: '3 weeks ago',
+  },
+];
+
+const buildProductDetails = (product) => {
+  const category = categoryDefaults[product.category] || categoryDefaults.default;
+  const stockQuantity = product.id % 7 === 0 ? 0 : 12 + (product.id % 5) * 6;
+  const inStock = stockQuantity > 0;
+
+  return {
+    shortDescription: `${product.name} is a premium ${product.category.toLowerCase()} item designed for everyday use with a polished finish and dependable performance.`,
+    fullDescription: `${product.name} delivers exceptional quality and a refined experience for modern shoppers. It combines reliable materials, smart design, and comfortable function so you can enjoy long-lasting performance every day. Perfect for both casual use and special occasions.`,
+    specifications: {
+      dimensions: category.defaultSpecs.dimensions,
+      weight: category.defaultSpecs.weight,
+      material: category.defaultSpecs.material,
+      colorOptions: category.defaultSpecs.colorOptions.join(', '),
+    },
+    inStock,
+    stockQuantity,
+    seller: category.seller,
+    shipping: category.shipping,
+    returnPolicy: '30-day return',
+    tags: [product.discount >= 40 ? 'Best Seller' : 'Trending', category.tag],
+    images: [product.image, product.image, product.image],
+    colorOptions: category.defaultSpecs.colorOptions,
+    sizeOptions: product.category === 'Fashion' ? ['S', 'M', 'L', 'XL'] : category.sizeOptions,
+    reviewSamples,
+  };
+};
+
+export const FEATURED_PRODUCTS = rawProducts.map((product) => ({
+  ...product,
+  ...buildProductDetails(product),
+}));
 

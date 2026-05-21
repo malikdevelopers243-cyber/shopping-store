@@ -17,6 +17,7 @@ import PaymentMethod from './pages/PaymentMethod';
 import PaymentSuccess from './pages/PaymentSuccess';
 import { ToastProvider } from './context/ToastContext';
 import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 import './App.css';
 
 function ScrollToTop() {
@@ -113,6 +114,15 @@ function AppRoutes({ user }) {
           element={
             <ProtectedRoute>
               <Products />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/product/:productId"
+          element={
+            <ProtectedRoute>
+              <ProductDetail />
             </ProtectedRoute>
           }
         />
