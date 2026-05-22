@@ -77,7 +77,11 @@ const Cart = () => {
                   onClick={() => removeFromCart(item.id)}
                   className="btn-remove"
                 >
-                  🗑️
+                  <img
+                    src={encodeURI('/images/remove.png')}
+                    alt="Remove item"
+                    className="remove-icon"
+                  />
                 </button>
               </div>
             ))}

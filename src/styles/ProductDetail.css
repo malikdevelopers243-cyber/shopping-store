@@ -536,7 +536,6 @@
   flex-shrink: 0;
 }
 
-/* Hide the small icons inside the right-side delivery panel */
 .detail-delivery-panel .item-icon {
   display: none;
 }

@@ -569,13 +569,22 @@
   color: #f56565;
   font-size: 18px;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 8px;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-remove:hover {
   background: #fed7d7;
+}
+
+.remove-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 /* CART SUMMARY SECTION */
