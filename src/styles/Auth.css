@@ -150,7 +150,8 @@ html, body {
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
+  background: rgb(190, 42, 42);
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   font-size: 16px;

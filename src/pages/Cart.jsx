@@ -28,7 +28,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <h1>🛒 Shopping Cart</h1>
+      <h1>Shopping Cart</h1>
 
       <div className="cart-content">
         {/* LEFT SIDE - CART ITEMS */}
@@ -87,8 +87,6 @@ const Cart = () => {
             ))}
           </div>
         </div>
-
-        {/* RIGHT SIDE - ORDER SUMMARY */}
         <div className="cart-summary-section">
           <div className="cart-summary-card">
             <h2>Order Summary</h2>
